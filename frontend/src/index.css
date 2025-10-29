@@ -1,1 +1,100 @@
 @import "tailwindcss";
+
+/* Tailwind v4 theme tokens */
+@theme {
+  --color-primary: #5f6fff;
+}
+
+/* Design tokens: colors and typography */
+@layer base {
+  :root {
+    /* Colors */
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-border: #e5e7eb; /* gray-200 */
+    --color-text: #111827; /* gray-900 */
+    --color-text-muted: #4b5563; /* gray-600 */
+    --color-brand: var(--color-primary);
+    --color-brand-foreground: #ffffff;
+
+    /* Radius */
+    --radius: 0.5rem;
+
+    /* Fonts */
+    --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+      "Segoe UI Emoji";
+    --font-heading: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans";
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Semantic components built on Tailwind utilities */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-brand-foreground);
+  }
+  .btn-primary:hover {
+    filter: brightness(0.95);
+  }
+  .btn-primary:focus-visible {
+    outline-color: var(--color-primary);
+  }
+
+  .btn-outline {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+  .btn-outline:hover {
+    background-color: #f9fafb; /* gray-50 */
+  }
+
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  .text-brand {
+    color: var(--color-brand);
+  }
+}
+#root {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  text-align: center;
+}
+html {
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+}
