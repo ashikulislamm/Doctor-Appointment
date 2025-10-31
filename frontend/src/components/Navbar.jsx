@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -29,8 +29,9 @@ const Navbar = () => {
           <img
             src={logo}
             alt="MediHub logo"
-            className="block h-8 w-auto md:h-9"
+            className="block h-8 w-10 md:h-9"
           />
+          <h1 className="text-2xl font-bold text-primary">MediHub</h1>
         </Link>
 
         {/* Desktop nav */}

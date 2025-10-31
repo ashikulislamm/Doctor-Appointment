@@ -7,6 +7,8 @@ import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Login from "./pages/Login.jsx";
 import MyProfile from "./pages/MyProfile.jsx";
+import Register from "./pages/Register.jsx";
+import DoctorDetails from "./pages/DoctorDetails.jsx";
 
 import Footer from "./components/Footer.jsx";
 
@@ -18,8 +20,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/doctors" element={<Doctors />} />
+          <Route path="/doctors/:id" element={<DoctorDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/my-profile" element={<MyProfile />} />
         </Routes>
